@@ -25,9 +25,11 @@ Release.define({
 	},
 
 	_updateBranchVersion: (function(original) {
+		console.log("DEFINING");
 		return function() {
+			console.log("INSIDE");
 			original.call(Release);
-
+			console.log("ORIGINAL DONE");
 			Release._updateReadmeReferences();
 			Release.exec("git commit -am \"README: Updating CDN references\"",
 				"Error committing README.md.");
